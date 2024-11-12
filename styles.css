@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  
+  .container {
+    width: 80%;
+    max-width: 900px;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #excelFileInput {
+    display: block;
+    margin: 20px auto;
+  }
+  
+  .catalog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .catalog-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(33% - 10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .catalog-item img.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .catalog-item h2 {
+    font-size: 1.5em;
+    margin: 10px 0 10px;
+  }
+  
+  .catalog-item p {
+    margin: 5px 0;
+  }
+  
+  .catalog-item p strong {
+    font-weight: bold;
+  }
+  
+  .catalog-item p strong {
+    font-weight: bold;
+  }
+
+  .style-price {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+  }
+  
+  .style-price .price {
+    margin-left: auto; /* Pushes the price to the right */
+  }
+  
