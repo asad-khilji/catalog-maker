@@ -1,0 +1,31 @@
+[
+    {
+      "Style Number": "12345",
+      "Name": "Product 1",
+      "Price": 19.99,
+      "Description": "This is a description of Product 1.",
+      "Image URL": "./image1.jpg"
+    },
+    {
+      "Style Number": "12345",
+      "Name": "Product 1",
+      "Price": 19.99,
+      "Description": "This is a description of Product 1.",
+      "Image URL": "./image1.jpg"
+    },
+    {
+      "Style Number": "12345",
+      "Name": "Product 1",
+      "Price": 19.99,
+      "Description": "This is a description of Product 1.",
+      "Image URL": "./image1.jpg"
+    },
+    {
+      "Style Number": "67890",
+      "Name": "Product 2",
+      "Price": 29.99,
+      "Description": "This is a description of Product 2.",
+      "Image URL": "./image1.jpg"
+    }
+  ]
+  

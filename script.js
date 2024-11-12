@@ -1,39 +1,36 @@
-document.getElementById('excelFileInput').addEventListener('change', handleFile);
+// When the page loads, call the fetchProducts function
+document.addEventListener('DOMContentLoaded', fetchProducts);
 
-function handleFile(event) {
-  const file = event.target.files[0];
-  const reader = new FileReader();
-
-  reader.onload = function(event) {
-    const data = new Uint8Array(event.target.result);
-    const workbook = XLSX.read(data, { type: 'array' });
-    
-    const sheet = workbook.Sheets[workbook.SheetNames[0]];
-    const rows = XLSX.utils.sheet_to_json(sheet);
-
-    displayCatalog(rows);
-  };
-
-  reader.readAsArrayBuffer(file);
+function fetchProducts() {
+  // Fetch the JSON file
+  fetch('products.json')
+    .then(response => response.json())  // Parse the JSON data
+    .then(products => {
+      displayCatalog(products);  // Call function to display products
+    })
+    .catch(error => {
+      console.error('Error loading the JSON file:', error);
+    });
 }
 
-function displayCatalog(data) {
+function displayCatalog(products) {
   const catalogContainer = document.getElementById('catalog');
-  catalogContainer.innerHTML = '';
+  catalogContainer.innerHTML = '';  // Clear any existing content
 
-  data.forEach((item) => {
+  // Iterate over each product and create HTML for it
+  products.forEach((item) => {
     const itemElement = document.createElement('div');
     itemElement.classList.add('catalog-item');
     
     itemElement.innerHTML = `
       <img src="${item['Image URL']}" alt="${item.Name}" class="product-image" />
       <p class="style-price">
-        <strong>Style # </strong> ${item['Style Number']}
-        <span class="price"><strong>Price $${item.Price}</span>
+        <strong>Style # </strong> ${item['Style Number']}<br><br>
+        <span class="price"><strong>Price $${item.Price}</strong></span>
       </p>
       <p>${item.Description}</p>
     `;
 
-    catalogContainer.appendChild(itemElement);
+    catalogContainer.appendChild(itemElement);  // Add the item to the catalog container
   });
 }
